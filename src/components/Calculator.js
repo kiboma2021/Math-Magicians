@@ -1,9 +1,10 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { Component, useReducer } from 'react';
 import '../styles.css';
 
 class CalculatorApp extends Component {
   render() {
+    const [state, dispatch] = useReducer(reducer);
     return (
       <div className="calculator-grid">
         <div className="output">
