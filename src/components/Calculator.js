@@ -2,14 +2,26 @@
 import React, { Component, useReducer } from 'react';
 import '../styles.css';
 
+const ACTIONS = {
+  ADD_DIGIT: 'add-digit',
+  CHOOSE_OPERATION: 'choose-operation',
+  CLEAR: 'clear',
+  DELETE: 'delete',
+  EVALUATE: 'evaluate',
+}
+
+function reducer(state, { type, paylod }) {
+  switch(type)
+}
+
 class CalculatorApp extends Component {
   render() {
-    const [state, dispatch] = useReducer(reducer);
+    const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(reducer, {});
     return (
       <div className="calculator-grid">
         <div className="output">
-          <div className="previous-operand">0</div>
-          <div className="current-operand" />
+          <div className="previous-operand">{previousOperand} {operation}</div>
+          <div className="current-operand">{currentOperand}</div>
         </div>
         <button type="submit">AC</button>
         <button type="submit">+/-</button>
