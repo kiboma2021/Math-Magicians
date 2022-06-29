@@ -1,3 +1,5 @@
+/* eslint-disable default-case */
+/* eslint-disable consistent-return */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component, useReducer } from 'react';
 import '../styles.css';
@@ -8,19 +10,30 @@ const ACTIONS = {
   CLEAR: 'clear',
   DELETE: 'delete',
   EVALUATE: 'evaluate',
-}
+};
 
 function reducer(state, { type, paylod }) {
-  switch(type)
+  switch (type) {
+    case ACTIONS.ADD_DIGIT:
+      return {
+        ...state,
+        currentOperand: `${ currentOperand || ''}${paylod.digit}`,
+      };
+  }
 }
 
 class CalculatorApp extends Component {
   render() {
     const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(reducer, {});
+    dispatch({ type: ACTIONS.ADD_DIGIT, paylod: { digit: 1 } });
     return (
       <div className="calculator-grid">
         <div className="output">
-          <div className="previous-operand">{previousOperand} {operation}</div>
+          <div className="previous-operand">
+            { previousOperand }
+            { operation }
+            {' '}
+          </div>
           <div className="current-operand">{currentOperand}</div>
         </div>
         <button type="submit">AC</button>
