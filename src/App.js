@@ -1,29 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="calculator-grid">
+      <div className="output">
+        <div className="previous-operand">pre</div>
+        <div className="current-operand">cur</div>
+      </div>
+      <button type="submit" className="span-two">AC</button>
+      <button type="submit">DEL</button>
+      <button type="submit">+</button>
+      <button type="submit">1</button>
+      <button type="submit">2</button>
+      <button type="submit">3</button>
+      <button type="submit">*</button>
+      <button type="submit">4</button>
+      <button type="submit">5</button>
+      <button type="submit">6</button>
+      <button type="submit">+</button>
+      <button type="submit">7</button>
+      <button type="submit">8</button>
+      <button type="submit">9</button>
+      <button type="submit">-</button>
+      <button type="submit">.</button>
+      <button type="submit">0</button>
+      <button type="submit" className="span-two">=</button>
     </div>
   );
 }
-
 export default App;
