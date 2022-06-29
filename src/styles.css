@@ -43,6 +43,11 @@ body {
   outline: none;
 }
 
-.calculator-grid > button:hover {
-  background-color: white;
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: rgba(255, 255, 255);
+}
+
+.span-two {
+  grid-column: span 2;
 }

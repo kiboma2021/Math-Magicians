@@ -1,6 +1,6 @@
-import './styles.css';
+import '../styles.css';
 
-function App() {
+function CalculatorApp() {
   return (
     <div className="calculator-grid">
       <div className="output">
@@ -28,4 +28,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default CalculatorApp;
