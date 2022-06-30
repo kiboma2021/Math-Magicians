@@ -1,4 +1,3 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import '../styles.css';
 import calculate from '../logic/calculate';
@@ -13,7 +12,7 @@ class CalculatorApp extends Component {
     };
   }
 
-  newOperation = (symbol) => {
+  mathOperation = (symbol) => {
     const { state } = this;
     this.setState(calculate(state, symbol));
   }
@@ -31,25 +30,25 @@ class CalculatorApp extends Component {
         <div className="output">
           <div className="my-operand">{next ?? total ?? 0}</div>
         </div>
-        <button type="submit" onClick={() => this.newOperation('AC')}>AC</button>
-        <button type="submit" onClick={() => this.newOperation('+/-')}>+/-</button>
-        <button type="submit" onClick={() => this.newOperation('%')}>%</button>
-        <button type="submit" onClick={() => this.newOperation('÷')} className="math-operands">÷</button>
-        <button type="submit" onClick={() => this.newOperation('7')}>7</button>
-        <button type="submit" onClick={() => this.newOperation('8')}>8</button>
-        <button type="submit" onClick={() => this.newOperation('9')}>9</button>
-        <button type="submit" onClick={() => this.newOperation('x')} className="math-operands">x</button>
-        <button type="submit" onClick={() => this.newOperation('4')}>4</button>
-        <button type="submit" onClick={() => this.newOperation('5')}>5</button>
-        <button type="submit" onClick={() => this.newOperation('6')}>6</button>
-        <button type="submit" onClick={() => this.newOperation('-')} className="math-operands">-</button>
-        <button type="submit" onClick={() => this.newOperation('1')}>1</button>
-        <button type="submit" onClick={() => this.newOperation('2')}>2</button>
-        <button type="submit" onClick={() => this.newOperation('3')}>3</button>
-        <button type="submit" onClick={() => this.newOperation('+')} className="math-operands">+</button>
-        <button type="submit" onClick={() => this.newOperation('0')} className="span-two">0</button>
-        <button type="submit" onClick={() => this.newOperation('.')}>.</button>
-        <button type="submit" onClick={() => this.newOperation('=')} className="math-operands">=</button>
+        <button type="submit" onClick={() => this.mathOperation('AC')}>AC</button>
+        <button type="submit" onClick={() => this.mathOperation('+/-')}>+/-</button>
+        <button type="submit" onClick={() => this.mathOperation('%')}>%</button>
+        <button type="submit" onClick={() => this.mathOperation('÷')} className="math-operands">÷</button>
+        <button type="submit" onClick={() => this.mathOperation('7')}>7</button>
+        <button type="submit" onClick={() => this.mathOperation('8')}>8</button>
+        <button type="submit" onClick={() => this.mathOperation('9')}>9</button>
+        <button type="submit" onClick={() => this.mathOperation('x')} className="math-operands">x</button>
+        <button type="submit" onClick={() => this.mathOperation('4')}>4</button>
+        <button type="submit" onClick={() => this.mathOperation('5')}>5</button>
+        <button type="submit" onClick={() => this.mathOperation('6')}>6</button>
+        <button type="submit" onClick={() => this.mathOperation('-')} className="math-operands">-</button>
+        <button type="submit" onClick={() => this.mathOperation('1')}>1</button>
+        <button type="submit" onClick={() => this.mathOperation('2')}>2</button>
+        <button type="submit" onClick={() => this.mathOperation('3')}>3</button>
+        <button type="submit" onClick={() => this.mathOperation('+')} className="math-operands">+</button>
+        <button type="submit" onClick={() => this.mathOperation('0')} className="span-two">0</button>
+        <button type="submit" onClick={() => this.mathOperation('.')}>.</button>
+        <button type="submit" onClick={() => this.mathOperation('=')} className="math-operands">=</button>
       </div>
     );
   }
