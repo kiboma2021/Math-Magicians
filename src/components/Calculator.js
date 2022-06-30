@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
@@ -20,7 +21,10 @@ function CalculatorApp() {
       return;
     }
     setCalc(calc + value);
-    
+
+    if (!ops.includes(value)) {
+      setResult(eval(calc + value));
+    }
   };
   return (
     <div className="calculator-grid">
