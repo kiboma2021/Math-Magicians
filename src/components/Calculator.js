@@ -4,11 +4,11 @@
 import React, { Component, useReducer } from 'react';
 import '../styles.css';
 
-const ACTIONS = {
+export const ACTIONS = {
   ADD_DIGIT: 'add-digit',
   CHOOSE_OPERATION: 'choose-operation',
   CLEAR: 'clear',
-  DELETE: 'delete',
+  DELETE_DIGIT: 'delete-digit',
   EVALUATE: 'evaluate',
 };
 
@@ -17,7 +17,7 @@ function reducer(state, { type, paylod }) {
     case ACTIONS.ADD_DIGIT:
       return {
         ...state,
-        currentOperand: `${ currentOperand || ''}${paylod.digit}`,
+        currentOperand: ` ${previousOperand || ''}${paylod.digit}`,
       };
   }
 }
@@ -25,7 +25,6 @@ function reducer(state, { type, paylod }) {
 class CalculatorApp extends Component {
   render() {
     const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(reducer, {});
-    dispatch({ type: ACTIONS.ADD_DIGIT, paylod: { digit: 1 } });
     return (
       <div className="calculator-grid">
         <div className="output">
@@ -36,6 +35,8 @@ class CalculatorApp extends Component {
           </div>
           <div className="current-operand">{currentOperand}</div>
         </div>
+        <DigitButton digit="/" dispatch={dispatch} />
+
         <button type="submit">AC</button>
         <button type="submit">+/-</button>
         <button type="submit">%</button>
