@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import '../styles.css';
 import calculate from '../logic/calculate';
 
-class CalculatorApp extends Component {
-  constructor(props) {
+const CalculatorApp = () => {
+  const [calc, calcNum] = useState([]);
+/*  constructor(props) {
     super(props);
 
     this.state = {
@@ -11,7 +12,7 @@ class CalculatorApp extends Component {
       next: null,
     };
   }
-
+*/
   mathOperation = (symbol) => {
     const { state } = this;
     this.setState(calculate(state, symbol));
@@ -23,34 +24,33 @@ class CalculatorApp extends Component {
     return false;
   }
 
-  render() {
-    const { total, next } = this.state;
-    return (
-      <div className="calculator-grid">
-        <div className="output">
-          <div className="my-operand">{next ?? total ?? 0}</div>
-        </div>
-        <button type="submit" onClick={() => this.mathOperation('AC')}>AC</button>
-        <button type="submit" onClick={() => this.mathOperation('+/-')}>+/-</button>
-        <button type="submit" onClick={() => this.mathOperation('%')}>%</button>
-        <button type="submit" onClick={() => this.mathOperation('÷')} className="math-operands">÷</button>
-        <button type="submit" onClick={() => this.mathOperation('7')}>7</button>
-        <button type="submit" onClick={() => this.mathOperation('8')}>8</button>
-        <button type="submit" onClick={() => this.mathOperation('9')}>9</button>
-        <button type="submit" onClick={() => this.mathOperation('x')} className="math-operands">x</button>
-        <button type="submit" onClick={() => this.mathOperation('4')}>4</button>
-        <button type="submit" onClick={() => this.mathOperation('5')}>5</button>
-        <button type="submit" onClick={() => this.mathOperation('6')}>6</button>
-        <button type="submit" onClick={() => this.mathOperation('-')} className="math-operands">-</button>
-        <button type="submit" onClick={() => this.mathOperation('1')}>1</button>
-        <button type="submit" onClick={() => this.mathOperation('2')}>2</button>
-        <button type="submit" onClick={() => this.mathOperation('3')}>3</button>
-        <button type="submit" onClick={() => this.mathOperation('+')} className="math-operands">+</button>
-        <button type="submit" onClick={() => this.mathOperation('0')} className="span-two">0</button>
-        <button type="submit" onClick={() => this.mathOperation('.')}>.</button>
-        <button type="submit" onClick={() => this.mathOperation('=')} className="math-operands">=</button>
+//  const { total, next } = this.state;
+  return (
+    <div className="calculator-grid">
+      <div className="output">
+        <div className="my-operand">{next ?? total ?? 0}</div>
       </div>
-    );
-  }
-}
+      <button type="submit" onClick={() => this.mathOperation('AC')}>AC</button>
+      <button type="submit" onClick={() => this.mathOperation('+/-')}>+/-</button>
+      <button type="submit" onClick={() => this.mathOperation('%')}>%</button>
+      <button type="submit" onClick={() => this.mathOperation('÷')} className="math-operands">÷</button>
+      <button type="submit" onClick={() => this.mathOperation('7')}>7</button>
+      <button type="submit" onClick={() => this.mathOperation('8')}>8</button>
+      <button type="submit" onClick={() => this.mathOperation('9')}>9</button>
+      <button type="submit" onClick={() => this.mathOperation('x')} className="math-operands">x</button>
+      <button type="submit" onClick={() => this.mathOperation('4')}>4</button>
+      <button type="submit" onClick={() => this.mathOperation('5')}>5</button>
+      <button type="submit" onClick={() => this.mathOperation('6')}>6</button>
+      <button type="submit" onClick={() => this.mathOperation('-')} className="math-operands">-</button>
+      <button type="submit" onClick={() => this.mathOperation('1')}>1</button>
+      <button type="submit" onClick={() => this.mathOperation('2')}>2</button>
+      <button type="submit" onClick={() => this.mathOperation('3')}>3</button>
+      <button type="submit" onClick={() => this.mathOperation('+')} className="math-operands">+</button>
+      <button type="submit" onClick={() => this.mathOperation('0')} className="span-two">0</button>
+      <button type="submit" onClick={() => this.mathOperation('.')}>.</button>
+      <button type="submit" onClick={() => this.mathOperation('=')} className="math-operands">=</button>
+    </div>
+  );
+};
+
 export default CalculatorApp;
