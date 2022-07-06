@@ -88,10 +88,18 @@ ul {
   margin-left: 1rem;
 }
 
-.home-page {
+.home-page,
+.quote,
+.calculator-page {
   margin: 2rem;
 }
 
 .nav-bar > div {
   font-size: 2rem;
+}
+
+.calculator-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
