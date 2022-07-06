@@ -75,7 +75,7 @@ ul {
 }
 
 .nav-bar > ul > li {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .nav-bar > ul > li:nth-child(2) {
@@ -83,7 +83,15 @@ ul {
   border-left: 2px solid black;
 }
 
+.Calc-link {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
 .home-page {
   margin: 2rem;
 }
 
+.nav-bar > div {
+  font-size: 2rem;
+}
