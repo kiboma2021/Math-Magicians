@@ -1,25 +1,19 @@
 /* eslint-disable react/prefer-stateless-function */
 import {
-  BrowserRouter as Router, Routes, Route, Link,
+  BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
 import React, { Component } from 'react';
 import Calc from './pages/Calculator';
 import Home from './pages/Home';
 import Quote from './pages/Qoute';
 import NotMatch from './pages/NoMatch';
+import Navbar from './pages/Navbar';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <nav className="nav-links">
-          <h1>Math Magicians</h1>
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/calculator">Calculator</Link>
-            <Link to="/quote">Quote</Link>
-          </div>
-        </nav>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/calculator" element={<Calc />} />
