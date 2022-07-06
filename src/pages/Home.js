@@ -1,9 +1,8 @@
 import React from 'react';
-import '../styles.css';
 
-const Home = () => {
+const Home = () => (
   <div className="home-page">
-    <h2>Welcome to our page!</h2>
+    <h2 className="sub-heading">Welcome to our page!</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id consequat
       justo. Phasellus sit amet laoreet massa. Proin quam massa, tempus in
@@ -25,8 +24,6 @@ const Home = () => {
       hendrerit vel. Cras eu dictum metus. Mauris dictum, leo sed ultrices
       egestas, justo augue fringilla lacus, eget mattis ex erat ut mi.
     </p>
-
-  </div>;
-};
-
+  </div>
+);
 export default Home;
