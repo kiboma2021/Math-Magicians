@@ -7,4 +7,10 @@ describe('Test Calculator components', () => {
     const linkElement = screen.getByText(/AC/i);
     expect(linkElement).toBeInTheDocument();
   });
+
+/*  test('Check if it has button Labels', () => {
+    const component = render(<CalculatorApp />);
+    const childElement = component.getByLabelText('Button');
+    expect(childElement).toBeInTheDocument();
+  }); */
 });
