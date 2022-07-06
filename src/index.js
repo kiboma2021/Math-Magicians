@@ -8,15 +8,19 @@ import Home from './pages/Home';
 import Quote from './pages/Qoute';
 import NotMatch from './pages/NoMatch';
 import reportWebVitals from './reportWebVitals';
+import './styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/calculator">Calculator</Link>
-        <Link to="/quote">Quote</Link>
+      <nav className="nav-links">
+        <h1>Math Magicians</h1>
+        <div>
+          <Link to="/">Home</Link>
+          <Link to="/calculator">Calculator</Link>
+          <Link to="/quote">Quote</Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
