@@ -12,7 +12,9 @@
 
 ## Live Demo
 
-[Live Demo Link](https://kiboma2021.github.io/Math-Magicians/)
+[Github](https://kiboma2021.github.io/Math-Magicians/)
+[Heruku](https://math-magician-react-ben.herokuapp.com/)
+[Netlify](https://gentle-axolotl-84d789.netlify.app/)
 
 ## Getting Started
 
